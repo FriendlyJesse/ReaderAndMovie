@@ -7,6 +7,12 @@
   padding: 200rpx 0;
   box-sizing: border-box; }
 
+text, button {
+  font-family: Microsoft YaHei; }
+
+page {
+  background: #b3d4db; }
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -16,11 +22,21 @@
     height: 128rpx;
     margin: 20rpx;
     border-radius: 50%; }
-  .userinfo-nickname {
-    color: #aaa; }
+  .userinfo-nickname, .usermotto button {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-top: 100rpx; }
 
 .usermotto {
-  margin-top: 200px; }
+  margin-top: 200rpx; }
+  .usermotto button {
+    font-size: 22rpx;
+    border: 2px solid #405f80;
+    color: #405f80;
+    width: 250rpx;
+    height: 80rpx;
+    line-height: 77rpx;
+    margin: 0; }
 
 .log-list {
   display: flex;
