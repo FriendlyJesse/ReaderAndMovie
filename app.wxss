@@ -10,8 +10,9 @@
 text, button {
   font-family: Microsoft YaHei; }
 
-page {
-  background: #b3d4db; }
+.index {
+  background: #b3d4db;
+  height: 100vh; }
 
 .userinfo {
   display: flex;
