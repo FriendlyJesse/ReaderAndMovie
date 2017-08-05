@@ -1,28 +1,13 @@
+<!--引入 item 模板-->
+<import src="post_item/post_item_template.wxml" />
+
 <view class="posts">
     <swiper indicator-dots="true" autoplay="true" circular="true">
-        <swiper-item>
-            <image src="/images/banner/wx.png"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/banner/vr.png"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/images/banner/iqiyi.png"></image>
+        <swiper-item wx:for="{{swiper}}" wx:key="swiper-{{index}}">
+            <image src="{{item}}"></image>
         </swiper-item>
     </swiper>
-    <view class="posts_container" wx:for="{{posts}}" wx:key="posts-{{index}}">
-        <view class="posts_container_author-data">
-            <image class="posts_container_author-data_author" src="{{item.author}}"></image>
-            <text class="posts_container_author-data_data">{{item.date}}</text>
-        </view>
-        <text class="posts_container_title">{{item.title}}</text>
-        <image class="posts_container_image" src="{{item.img}}"></image>
-        <text class="posts_container_content">{{item.content}}</text>
-        <view class="posts_container_like">
-            <image class="posts_container_like_image" src="{{item.like.chat_img}}"></image>
-            <text class="posts_container_like_font">{{item.like.chat_num}}</text>
-            <image class="posts_container_like_image" src="{{item.like.view_img}}"></image>
-            <text class="posts_container_like_font">{{item.like.view_num}}</text>
-        </view>
-    </view>
+    <block wx:for="{{posts}}" wx:key="posts-{{index}}">
+        <template is="post_item" data="{{item}}"></template>
+    </block>
 </view>
