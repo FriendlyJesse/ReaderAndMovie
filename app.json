@@ -3,6 +3,11 @@
     [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/posts/posts"
-    ]
+        "pages/posts/posts",
+        "pages/posts/posts_detail/posts_detail"
+    ],
+    "window":
+    {
+        "navigationBarBackgroundColor": "#405f80"
+    }
 }

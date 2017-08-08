@@ -1,5 +1,5 @@
 <!--引入 item 模板-->
-<import src="post_item/post_item_template.wxml" />
+<import src="posts_item/posts_item_template.wxml" />
 
 <view class="posts">
     <swiper indicator-dots="true" autoplay="true" circular="true">
@@ -8,6 +8,8 @@
         </swiper-item>
     </swiper>
     <block wx:for="{{posts}}" wx:key="posts-{{index}}">
-        <template is="post_item" data="{{item}}"></template>
+        <view bindtap="toDetail" data-postid="{{item.postId}}">
+            <template is="post_item" data="{{...item}}"></template>
+        </view>
     </block>
 </view>

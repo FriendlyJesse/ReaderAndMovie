@@ -1,0 +1,19 @@
+<view class="posts-detail">
+    <image class="posts-detail_image" src="{{postData.headImgSrc}}"></image>
+    <image class="posts-detail_audio" src="/images/music/music-start.png"></image>
+    <view class="posts-detail_author-date">
+        <image class="posts-detail_author-date_avatar" src="/images/avatar/2.png"></image>
+        <text class="posts-detail_author-date_author">{{postData.author}}</text>
+        <text class="posts-detail_author-date_text">发表于</text>
+        <text class="posts-detail_author-date_date">{{postData.dateTime}}</text>
+    </view>
+    <text class="posts-detail_title">{{postData.title}}</text>
+    <view class="posts-detail_tool">
+        <view class="posts-detail_tool_circle-img">
+            <image class="posts-detail_tool_circle-img_" src="/images/icon/collection.png"></image>
+            <image class="posts-detail_tool_circle-img_share" src="/images/icon/share.png"></image>
+        </view>
+        <view class="posts-detail_tool_horizon"></view>
+    </view>
+    <text class="posts-detail_detail">{{postData.detail}}</text>
+</view>
