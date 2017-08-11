@@ -8,14 +8,5 @@ Page
     {
         posts,
         swiper
-    },
-    toDetail(event)
-    {
-        let id = event.currentTarget.dataset.postid;
-
-        wx.navigateTo
-        ({
-            url: 'posts_detail/posts_detail?id=' + id
-        })
     }
 })

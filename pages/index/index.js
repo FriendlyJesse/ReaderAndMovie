@@ -19,20 +19,5 @@ Page
                 userInfo: userInfo
             })
         })
-    },
-    //事件处理函数
-    toLogs()
-    {
-        wx.navigateTo
-        ({
-            url: '../logs/logs'
-        })
-    },
-    toPosts()
-    {
-        wx.navigateTo
-        ({
-            url: '../posts/posts'
-        })
     }
 })

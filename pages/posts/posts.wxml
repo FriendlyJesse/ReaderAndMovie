@@ -7,9 +7,7 @@
             <image src="{{item}}"></image>
         </swiper-item>
     </swiper>
-    <block wx:for="{{posts}}" wx:key="posts-{{index}}">
-        <view bindtap="toDetail" data-postid="{{item.postId}}">
-            <template is="post_item" data="{{...item}}"></template>
-        </view>
-    </block>
+    <navigator url="posts_detail/posts_detail?id={{item.postId}}" wx:for="{{posts}}" wx:key="posts-{{index}}">
+        <template is="post_item" data="{{...item}}"></template>
+    </navigator>
 </view>
