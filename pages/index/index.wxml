@@ -5,7 +5,7 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </navigator>
 
-    <navigator url="../posts/posts" class="usermotto">
+    <navigator url="../posts/posts" open-type="switchTab" class="usermotto">
         <button plain="true">开启小程序之旅</button>
     </navigator>
 </view>

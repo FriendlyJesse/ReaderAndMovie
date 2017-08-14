@@ -4,7 +4,9 @@
 <view class="posts">
     <swiper indicator-dots="true" autoplay="true" circular="true">
         <swiper-item wx:for="{{swiper}}" wx:key="swiper-{{index}}">
-            <image src="{{item}}"></image>
+            <navigator url="posts_detail/posts_detail?id={{item.id}}">
+                <image src="{{item.img}}"></image>
+            </navigator>
         </swiper-item>
     </swiper>
     <navigator url="posts_detail/posts_detail?id={{item.postId}}" wx:for="{{posts}}" wx:key="posts-{{index}}">
