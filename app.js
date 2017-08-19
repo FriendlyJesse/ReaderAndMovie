@@ -33,6 +33,7 @@ App({
     globalData:
     {
         userInfo: null,
-        musicPostId: 1
+        musicPostId: 1,
+        doubanBase: 'https://api.douban.com'
     }
 })

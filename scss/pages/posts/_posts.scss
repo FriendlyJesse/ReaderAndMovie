@@ -1,5 +1,7 @@
 .posts
 {
+    @import "../../components/post";
+
     swiper
     {
         height: 600rpx;
@@ -10,5 +12,4 @@
             height: 600rpx;
         }
     }
-    @extend %post;
 }

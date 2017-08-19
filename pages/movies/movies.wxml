@@ -1,0 +1,8 @@
+<!--引入 movie_list 模板-->
+<import src="movie_list/movie_list.wxml" />
+
+<view class="movies">
+    <template is="movie_list"></template>
+    <template is="movie_list"></template>
+    <template is="movie_list"></template>
+</view>

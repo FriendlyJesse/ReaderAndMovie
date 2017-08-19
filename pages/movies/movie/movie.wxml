@@ -1,0 +1,10 @@
+<!--引入 stars 模板-->
+<import src="../stars/stars.wxml" />
+
+<template name="movie">
+    <view class="movie-container">
+        <image class="movie-container_img" src="/images/test.png"></image>
+        <text class="movie-container_title">你的名字</text>
+        <template is="stars"></template>
+    </view>
+</template>

@@ -11,6 +11,43 @@ text, button {
   font-family: Microsoft YaHei;
   font-size: 24rpx; }
 
+.index {
+  background: #b3d4db;
+  height: 100vh; }
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%; }
+  .userinfo-nickname, .usermotto button {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-top: 100rpx; }
+
+.usermotto {
+  margin-top: 200rpx; }
+  .usermotto button {
+    font-size: 22rpx;
+    border: 2px solid #405f80;
+    color: #405f80;
+    width: 250rpx;
+    height: 80rpx;
+    line-height: 77rpx;
+    margin: 0; }
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx; }
+
+.log-item {
+  margin: 10rpx; }
+
 .posts .post_container {
   display: flex;
   flex-direction: column;
@@ -57,44 +94,6 @@ text, button {
     .posts .post_container_like_font {
       vertical-align: middle;
       margin-right: 20px; }
-
-.index {
-  background: #b3d4db;
-  height: 100vh; }
-
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .userinfo-avatar {
-    width: 128rpx;
-    height: 128rpx;
-    margin: 20rpx;
-    border-radius: 50%; }
-  .userinfo-nickname, .usermotto button {
-    font-size: 32rpx;
-    font-weight: bold;
-    margin-top: 100rpx; }
-
-.usermotto {
-  margin-top: 200rpx; }
-  .usermotto button {
-    font-size: 22rpx;
-    border: 2px solid #405f80;
-    color: #405f80;
-    width: 250rpx;
-    height: 80rpx;
-    line-height: 77rpx;
-    margin: 0; }
-
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx; }
-
-.log-item {
-  margin: 10rpx; }
-
 .posts swiper {
   height: 600rpx; }
   .posts swiper image {
@@ -171,3 +170,53 @@ text, button {
     margin-right: 30rpx;
     line-height: 44rpx;
     letter-spacing: 2px; }
+
+.movies {
+  background: #f2f2f2; }
+  .movies .movie-list-container {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin-bottom: 30rpx; }
+    .movies .movie-list-container .movie-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 22rpx;
+      flex: auto; }
+      .movies .movie-list-container .movie-container .stars-container {
+        display: flex; }
+        .movies .movie-list-container .movie-container .stars-container_wrap {
+          display: flex;
+          height: 17rpx;
+          margin-right: 24rpx;
+          margin-top: 6rpx; }
+          .movies .movie-list-container .movie-container .stars-container_wrap_star {
+            padding-left: 3rpx;
+            width: 17rpx;
+            height: 17rpx; }
+        .movies .movie-list-container .movie-container .stars-container_score {
+          color: #1f3463; }
+      .movies .movie-list-container .movie-container_img {
+        width: 200rpx;
+        height: 270rpx;
+        margin: 0 auto;
+        padding-bottom: 20rpx; }
+      .movies .movie-list-container .movie-container_title {
+        margin-bottom: 16rpx;
+        font-size: 24rpx; }
+    .movies .movie-list-container_head {
+      padding: 30rpx 25rpx 22rpx; }
+      .movies .movie-list-container_head_slogan {
+        font-size: 24rpx; }
+      .movies .movie-list-container_head_more {
+        float: right; }
+        .movies .movie-list-container_head_more_text {
+          vertical-align: middle;
+          margin-right: 10rpx;
+          color: #1f4ba5; }
+        .movies .movie-list-container_head_more_img {
+          width: 9rpx;
+          height: 16rpx;
+          vertical-align: middle; }
+    .movies .movie-list-container_main {
+      display: flex; }

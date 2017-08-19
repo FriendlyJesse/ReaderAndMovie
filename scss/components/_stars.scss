@@ -1,0 +1,24 @@
+// 星星模块
+.stars-container
+{
+    display: flex;
+
+    &_wrap
+    {
+        display: flex;
+        height: 17rpx;
+        margin-right: 24rpx;
+        margin-top: 6rpx;
+
+        &_star
+        {
+            padding-left: 3rpx;
+            width: 17rpx;
+            height: 17rpx;
+        }
+    }
+    &_score
+    {
+        color: #1f3463;
+    }
+}

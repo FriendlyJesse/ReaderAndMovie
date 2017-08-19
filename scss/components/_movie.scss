@@ -1,0 +1,23 @@
+// 单个评分模块
+.movie-container
+{
+    @import "stars";
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 22rpx;
+    flex:auto;
+
+    &_img
+    {
+        width: 200rpx;
+        height: 270rpx;
+        margin: 0 auto;
+        padding-bottom: 20rpx;
+    }
+    &_title
+    {
+        margin-bottom: 16rpx;
+        font-size: 24rpx;
+    }
+}

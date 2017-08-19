@@ -1,0 +1,41 @@
+// 模块列表
+.movie-list-container
+{
+    @import "movie";
+
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin-bottom: 30rpx;
+
+    &_head
+    {
+        padding: 30rpx 25rpx 22rpx;
+
+        &_slogan
+        {
+            font-size: 24rpx;
+        }
+        &_more
+        {
+            float: right;
+
+            &_text
+            {
+                vertical-align: middle;
+                margin-right: 10rpx;
+                color: #1f4ba5;
+            }
+            &_img
+            {
+                width: 9rpx;
+                height: 16rpx;
+                vertical-align: middle;
+            }
+        }
+    }
+    &_main
+    {
+        display: flex;
+    }
+}
