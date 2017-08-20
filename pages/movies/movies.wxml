@@ -1,8 +1,16 @@
 <!--引入 movie_list 模板-->
 <import src="movie_list/movie_list.wxml" />
+<import src="movie_grid/movie_grid.wxml" />
 
 <view class="movies">
-    <template is="movie_list"></template>
-    <template is="movie_list"></template>
-    <template is="movie_list"></template>
+    <view class="movies_search">
+        <icon type="search" size="13" color="#405f88"></icon>
+        <input placeholder="你的名字、战狼2" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindFirm" />
+        <image src="/images/icon/xx.png" bindtap="onImg"></image>
+    </view>
+    <template wx:if="!searchPannelShow" is="movie_list" wx:for="{{moviesList}}" wx:for-item="movies" wx:key="movie_list-{{index}}" data="{{movies, title: title[index]}}"></template>
+</view>
+
+<view class="search_pannel" wx:if="{{searchPannelShow}}">
+    <template is="movie_grid"></template>
 </view>

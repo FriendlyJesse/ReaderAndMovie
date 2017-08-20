@@ -9,7 +9,8 @@
 
 text, button {
   font-family: Microsoft YaHei;
-  font-size: 24rpx; }
+  font-size: 24rpx;
+  color: #666666; }
 
 .index {
   background: #b3d4db;
@@ -220,3 +221,55 @@ text, button {
           vertical-align: middle; }
     .movies .movie-list-container_main {
       display: flex; }
+  .movies_search {
+    background: #f2f2f2;
+    width: 100%;
+    height: 80rpx;
+    display: flex; }
+    .movies_search icon {
+      margin: auto 0 auto 20rpx; }
+    .movies_search input {
+      width: 600rpx;
+      height: 100%;
+      margin-left: 20px;
+      font-size: 28rpx; }
+    .movies_search img {
+      width: 30rpx;
+      height: 30rpx;
+      margin: auto 0 auto 10rpx; }
+
+.search_pannel {
+  position: absolute;
+  top: 80rpx; }
+
+.more .movie_grid-container {
+  height: 1300rpx;
+  padding-top: 20rpx; }
+  .more .movie_grid-container .movie-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 22rpx;
+    flex: auto; }
+    .more .movie_grid-container .movie-container .stars-container {
+      display: flex; }
+      .more .movie_grid-container .movie-container .stars-container_wrap {
+        display: flex;
+        height: 17rpx;
+        margin-right: 24rpx;
+        margin-top: 6rpx; }
+        .more .movie_grid-container .movie-container .stars-container_wrap_star {
+          padding-left: 3rpx;
+          width: 17rpx;
+          height: 17rpx; }
+      .more .movie_grid-container .movie-container .stars-container_score {
+        color: #1f3463; }
+    .more .movie_grid-container .movie-container_img {
+      width: 200rpx;
+      height: 270rpx;
+      margin: 0 auto;
+      padding-bottom: 20rpx; }
+    .more .movie_grid-container .movie-container_title {
+      margin-bottom: 16rpx;
+      font-size: 24rpx; }
+  .more .movie_grid-container .movie-container {
+    float: left; }

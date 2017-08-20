@@ -1,0 +1,6 @@
+<!--引入 movie 模板-->
+<import src="../movie_grid/movie_grid.wxml" />
+
+<view class="more">
+    <template is="movieGrid" data="{{movies}}"></template>
+</view>

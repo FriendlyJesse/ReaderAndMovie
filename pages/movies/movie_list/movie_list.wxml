@@ -4,16 +4,14 @@
 <template name="movie_list">
     <view class="movie-list-container">
         <view class="movie-list-container_head">
-            <text class="movie-list-container_head_slogan">正在热映</text>
-            <view class="movie-list-container_head_more">
+            <text class="movie-list-container_head_slogan">{{title}}</text>
+            <navigator class="movie-list-container_head_more" url="more/more?category={{title}}">
                 <text class="movie-list-container_head_more_text">更多</text>
                 <image class="movie-list-container_head_more_img" src="/images/icon/arrow-right.png"></image>
-            </view>
+            </navigator>
         </view>
         <view class="movie-list-container_main">
-            <template is="movie"></template>
-            <template is="movie"></template>
-            <template is="movie"></template>
+            <template is="movie" wx:for="{{movies}}" data="{{...item}}" wx:key="movies-{{index}}"></template>
         </view>
     </view>
 </template>

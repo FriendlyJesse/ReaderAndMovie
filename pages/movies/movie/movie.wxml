@@ -3,8 +3,8 @@
 
 <template name="movie">
     <view class="movie-container">
-        <image class="movie-container_img" src="/images/test.png"></image>
-        <text class="movie-container_title">你的名字</text>
-        <template is="stars"></template>
+        <image class="movie-container_img" src="{{coverageUrl}}"></image>
+        <text class="movie-container_title">{{title}}</text>
+        <template is="stars" data="{{average, stars}}"></template>
     </view>
 </template>

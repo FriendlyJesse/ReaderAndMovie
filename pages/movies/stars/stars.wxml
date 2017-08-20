@@ -1,12 +1,12 @@
 <template name="stars">
     <view class="stars-container">
         <view class="stars-container_wrap">
-            <image class="stars-container_wrap_star" src="/images/icon/star.png"></image>
-            <image class="stars-container_wrap_star" src="/images/icon/star.png"></image>
-            <image class="stars-container_wrap_star" src="/images/icon/star.png"></image>
-            <image class="stars-container_wrap_star" src="/images/icon/star.png"></image>
-            <image class="stars-container_wrap_star" src="/images/icon/star.png"></image>
+            <block wx:for="{{stars}}" wx:key="stars-{{index}}">
+                <image wx:if="{{item == 1}}" class="stars-container_wrap_star" src="/images/icon/star.png"></image>
+                <image wx:elif="{{item == 0}}" class="stars-container_wrap_star" src="/images/icon/none-star.png"></image>
+                <image wx:else class="stars-container_wrap_star" src="/images/icon/Star_Half.png"></image>
+            </block>
         </view>
-        <text class="stars-container_score">8.7</text>
+        <text class="stars-container_score">{{average}}</text>
     </view>
 </template>

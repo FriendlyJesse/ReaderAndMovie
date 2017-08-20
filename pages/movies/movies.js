@@ -1,63 +1,72 @@
+import {calcStars, http} from '../../utils/util';
 const app = getApp();
 
 Page
 ({
     data:
     {
-
+        title:
+        [
+            '正在热映',
+            '即将上映',
+            '豆瓣 Top250'
+        ],
+        moviesList: [],
+        searchPannelShow: false
     },
     onLoad()
     {
-        const inTheaters = app.globalData.doubanBase + '/v2/movie/in_theaters',
-              comingSoon = app.globalData.doubanBase + '/v2/movie/coming_soon',
-              top250 = app.globalData.doubanBase + '/v2/movie/top250';
+        const inTheaters = app.globalData.doubanBase + '/v2/movie/in_theaters?start=0&count=3',
+              comingSoon = app.globalData.doubanBase + '/v2/movie/coming_soon?start=0&count=3',
+              top250 = app.globalData.doubanBase + '/v2/movie/top250?start=0&count=3';
 
-        this.getMovieListData(inTheaters);
-        this.getMovieListData(comingSoon);
-        this.getMovieListData(top250);
-    },
-    getMovieListData(url)
-    {
-        let _this = this;
-        wx.request
-        ({
-            url: url,
-            data:
-            {
-                start: 0,
-                count: 3
-            },
-            header:
-            {
-                'content-type': 'json' //小程序里默认的 JSON 方式无法请求，此方案解决。
-            },
-            success: function(res)
-            {
-                _this.processDoubanData(res.data);
-            }
-        })
+        http(inTheaters, this.processDoubanData);
+        http(comingSoon, this.processDoubanData);
+        http(top250, this.processDoubanData);
     },
     processDoubanData(movie)
     {
         let movies = [];
-        for (let i in movie.subjects)
+        movie.subjects.forEach(function(el)
         {
-            let subject = movie.subjects[i],
-                title = subject.title;
+            let title = el.title;
             if (title.length >= 6) title = title.substring(0, 6) + '...';
 
             var temp =
             {
                 title,
-                average: subject.rating.average,
-                coverageUrl: subject.images.large,
-                movieId: subject.id
+                stars: calcStars(el.rating.stars),
+                average: el.rating.average,
+                coverageUrl: el.images.large,
+                movieId: el.id
             };
             movies.push(temp);
-        }
+        })
+
+        // 数据写入
+        this.data.moviesList.push(movies);
+        // 触发脏检查
         this.setData
         ({
-            movies
+            moviesList: this.data.moviesList
+        })
+    },
+    onBindFocus()
+    {
+        this.setData
+        ({
+            searchPannelShow: true
+        })
+    },
+    onBindFirm()
+    {
+
+    },
+    onImg()
+    {
+        this.setData
+        ({
+            searchPannelShow: false
         })
     }
 })

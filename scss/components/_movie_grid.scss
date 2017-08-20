@@ -1,0 +1,12 @@
+.movie_grid-container
+{
+    @import "movie";
+
+    height: 1300rpx;
+    padding-top:20rpx;
+
+    .movie-container
+    {
+        float: left;
+    }
+}
