@@ -39,7 +39,8 @@ Page
         let searchUrl = app.globalData.doubanBase + '/v2/movie/search?q=' + e.detail.value;
         this.setData
         ({
-            requestUrl: searchUrl
+            requestUrl: searchUrl,
+            tatolCount: 0
         })
         http(searchUrl, this.processSearch);
     },
@@ -68,7 +69,6 @@ Page
             };
             movies.push(temp);
         })
-
         // 数据写入
         this.data.moviesList.push(movies);
         // 触发脏检查

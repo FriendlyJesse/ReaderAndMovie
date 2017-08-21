@@ -8,7 +8,7 @@
         <input placeholder="你的名字、战狼2" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindFirm" confirm-type="search" />
         <image src="/images/icon/xx.png" bindtap="onBindImg"></image>
     </view>
-    <template wx:if="!searchPannelShow" is="movie_list" wx:for="{{moviesList}}" wx:for-item="movies" wx:key="movie_list-{{index}}" data="{{movies, title: title[index]}}"></template>
+    <template wx:if="{{!searchPannelShow}}" is="movie_list" wx:for="{{moviesList}}" wx:for-item="movies" wx:key="movie_list-{{index}}" data="{{movies, title: title[index]}}"></template>
 </view>
 
 <view class="search_pannel" wx:if="{{searchPannelShow}}">

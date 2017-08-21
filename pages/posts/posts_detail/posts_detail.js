@@ -123,6 +123,16 @@ Page
 
             app.globalData.musicPostId = null;
         })
+        // 监听暂停播放
+        wx.onBackgroundAudioStop(function()
+        {
+            _this.setData
+            ({
+                isPlay: false
+            })
+
+            app.globalData.musicPostId = null;
+        })
 
         // 后台播放状态
         wx.getBackgroundAudioPlayerState

@@ -2,9 +2,9 @@
 <import src="../stars/stars.wxml" />
 
 <template name="movie">
-    <view class="movie-container">
+    <navigator class="movie-container" url="/pages/movies/movie_detail/movie_detail?id={{movieId}}">
         <image class="movie-container_img" src="{{coverageUrl}}"></image>
         <text class="movie-container_title">{{title}}</text>
         <template is="stars" data="{{average, stars}}"></template>
-    </view>
+    </navigator>
 </template>

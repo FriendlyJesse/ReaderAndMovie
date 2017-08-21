@@ -22,7 +22,8 @@ function calcStars(star)
     let arr = [];
     for (let i = 0; i < 5; i++)
     {
-        if (parseInt(star) != star && i == parseInt(star)) {
+        if (parseInt(star) != star && i == parseInt(star))
+        {
             arr.push(0.5);
             continue;
         }
@@ -47,9 +48,37 @@ function http(url, callBack)
     })
 }
 
+// 拼接影人名字
+function convertToCastString(casts)
+{
+    let castsjoin = "";
+    for (let i in casts)
+    {
+        castsjoin = castsjoin + casts[i].name + " / ";
+    }
+    return castsjoin.substring(0, castsjoin.length - 2);
+}
+
+function convertToCastInfos(casts)
+{
+    let castsArray = []
+    for (let i in casts)
+    {
+        let cast =
+        {
+            img: casts[i].avatars ? casts[i].avatars.large : "",
+            name: casts[i].name
+        }
+        castsArray.push(cast);
+    }
+    return castsArray;
+}
+
 // 开放接口
 export {
     formatTime,
     calcStars,
-    http
+    http,
+    convertToCastString,
+    convertToCastInfos
 };
