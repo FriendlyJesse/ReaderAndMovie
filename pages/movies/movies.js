@@ -12,7 +12,10 @@ Page
             '豆瓣 Top250'
         ],
         moviesList: [],
-        searchPannelShow: false
+        searchPannelShow: false,
+        searchResylt: [],
+        requestUrl: '',
+        tatolCount: 0
     },
     onLoad()
     {
@@ -23,6 +26,29 @@ Page
         http(inTheaters, this.processDoubanData);
         http(comingSoon, this.processDoubanData);
         http(top250, this.processDoubanData);
+    },
+    onBindFocus()
+    {
+        this.setData
+        ({
+            searchPannelShow: true
+        })
+    },
+    onBindFirm(e)
+    {
+        let searchUrl = app.globalData.doubanBase + '/v2/movie/search?q=' + e.detail.value;
+        this.setData
+        ({
+            requestUrl: searchUrl
+        })
+        http(searchUrl, this.processSearch);
+    },
+    onBindImg()
+    {
+        this.setData
+        ({
+            searchPannelShow: false
+        })
     },
     processDoubanData(movie)
     {
@@ -51,22 +77,43 @@ Page
             moviesList: this.data.moviesList
         })
     },
-    onBindFocus()
+    processSearch(movie)
     {
-        this.setData
-        ({
-            searchPannelShow: true
-        })
-    },
-    onBindFirm()
-    {
+        let movies = [];
+        movie.subjects.forEach(function(el)
+        {
+            let title = el.title;
+            if (title.length >= 6) title = title.substring(0, 6) + '...';
 
-    },
-    onImg()
-    {
+            var temp =
+            {
+                title,
+                stars: calcStars(el.rating.stars),
+                average: el.rating.average,
+                coverageUrl: el.images.large,
+                movieId: el.id
+            };
+            movies.push(temp);
+        })
+        let totalMovies = this.data.tatolCount ? this.data.searchResylt.concat(movies) : movies;
+        // 触发脏检查
         this.setData
         ({
-            searchPannelShow: false
+            searchResylt: totalMovies,
+            tatolCount: this.data.tatolCount + 21
         })
-    }
+        wx.hideLoading();
+        wx.stopPullDownRefresh();
+    },
+    onScrolltolower()
+    {
+        // 下拉加载下一组数据
+        let nextUrl = this.data.requestUrl + '&start=' + this.data.tatolCount + '&count=' + (this.data.tatolCount + 21);
+        console.log(nextUrl);
+        http(nextUrl, this.processSearch)
+        wx.showLoading
+        ({
+            title: '加载中'
+        })
+    },
 })

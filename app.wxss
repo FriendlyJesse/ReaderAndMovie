@@ -233,14 +233,47 @@ text, button {
       height: 100%;
       margin-left: 20px;
       font-size: 28rpx; }
-    .movies_search img {
+    .movies_search image {
       width: 30rpx;
       height: 30rpx;
       margin: auto 0 auto 10rpx; }
 
 .search_pannel {
   position: absolute;
-  top: 80rpx; }
+  top: 80rpx;
+  background: #fff;
+  width: 100%; }
+  .search_pannel .movie_grid-container {
+    height: 1300rpx;
+    padding-top: 20rpx; }
+    .search_pannel .movie_grid-container .movie-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 22rpx;
+      flex: auto; }
+      .search_pannel .movie_grid-container .movie-container .stars-container {
+        display: flex; }
+        .search_pannel .movie_grid-container .movie-container .stars-container_wrap {
+          display: flex;
+          height: 17rpx;
+          margin-right: 24rpx;
+          margin-top: 6rpx; }
+          .search_pannel .movie_grid-container .movie-container .stars-container_wrap_star {
+            padding-left: 3rpx;
+            width: 17rpx;
+            height: 17rpx; }
+        .search_pannel .movie_grid-container .movie-container .stars-container_score {
+          color: #1f3463; }
+      .search_pannel .movie_grid-container .movie-container_img {
+        width: 200rpx;
+        height: 270rpx;
+        margin: 0 auto;
+        padding-bottom: 20rpx; }
+      .search_pannel .movie_grid-container .movie-container_title {
+        margin-bottom: 16rpx;
+        font-size: 24rpx; }
+    .search_pannel .movie_grid-container .movie-container {
+      float: left; }
 
 .more .movie_grid-container {
   height: 1300rpx;

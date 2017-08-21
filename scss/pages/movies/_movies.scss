@@ -22,7 +22,7 @@
             margin-left: 20px;
             font-size: 28rpx;
         }
-        img
+        image
         {
             width: 30rpx;
             height: 30rpx;
@@ -33,6 +33,10 @@
 
 .search_pannel
 {
+    @import "../../components/movie_grid";
+
     position: absolute;
     top: 80rpx;
+    background: #fff;
+    width: 100%;
 }
